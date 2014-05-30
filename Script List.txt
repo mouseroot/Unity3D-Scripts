@@ -43,3 +43,11 @@ GameManager/GameManagerEditor
 CheckpointManager/CheckpointManagerEditor/CheckpointScript
 	- Script that manages all gameObjects that have the CheckpointScript, which tracks if the attached collider has been triggered
 
+ObjectPooling - Implements the "object pooling" mechanism. See video https://www.youtube.com/watch?v=9-zDOJllPZ8
+Must be used with Bullet.cs
+
+Bullet - Deactivates the gameobject after a set time. Used in conjunction with ObjectPooling.cs
+
+MoveForward - Moves an object forward along z-axis
+
+

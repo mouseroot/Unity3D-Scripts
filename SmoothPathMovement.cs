@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 using System;
 using System.Collections;
@@ -7,6 +7,7 @@ using System.Collections;
 public class SmoothPathNode
 {
     public string nodeName;
+    public Color textColor;
     public Vector3 pathPosition;
     public float transitionDuration;
 }
@@ -29,7 +30,6 @@ public class SmoothPathMovement : MonoBehaviour {
 	void Start () {
         startTime = Time.time;
         currentPathPosition = pathNodes[0].pathPosition;
-        //StartCoroutine("nextNode");
 	}
 	
 	// Update is called once per frame
@@ -57,7 +57,6 @@ public class SmoothPathMovement : MonoBehaviour {
             currentPathPosition = pathNodes[currentPathIndex].pathPosition;
         }
         
-        //StartCoroutine("nextNode");
 	}
 
     void OnDrawGizmosSelected()
@@ -72,18 +71,10 @@ public class SmoothPathMovement : MonoBehaviour {
             if (i == 0)
             {
                 Gizmos.color = Color.green;
-                Gizmos.DrawSphere(pathNodes[0].pathPosition, 0.06f);
+                //Gizmos.DrawSphere(pathNodes[0].pathPosition, 0.10f);
                 Gizmos.color = Color.white;
                 Gizmos.DrawLine(pathNodes[0].pathPosition, pathNodes[i].pathPosition);
                 Handles.color = Color.red;
-                if (pathNodes[i].nodeName == null || pathNodes[i].nodeName == "")
-                {
-                    Handles.Label(pathNodes[0].pathPosition, "Node " + i + "(" + pathNodes[0].transitionDuration + "s)");
-                }
-                else
-                {
-                    Handles.Label(pathNodes[0].pathPosition, pathNodes[i].nodeName + " (" + pathNodes[0].transitionDuration + "s)");
-                }
 
             }
             //if node is not the first
@@ -98,17 +89,9 @@ public class SmoothPathMovement : MonoBehaviour {
                     Gizmos.color = Color.blue;
                 }
 
-                Gizmos.DrawSphere(pathNodes[i].pathPosition, 0.05f);
+                Gizmos.DrawSphere(pathNodes[i].pathPosition, 0.10f);
                 Gizmos.color = Color.white;
                 Gizmos.DrawLine(pathNodes[i - 1].pathPosition, pathNodes[i].pathPosition);
-                if (pathNodes[i].nodeName == null || pathNodes[i].nodeName == "")
-                {
-                    Handles.Label(pathNodes[i].pathPosition, "Node " + i + "(" + pathNodes[i].transitionDuration + "s)");
-                }
-                else
-                {
-                    Handles.Label(pathNodes[i].pathPosition, pathNodes[i].nodeName + " (" + pathNodes[i].transitionDuration + "s)");
-                }
             }
 
         }

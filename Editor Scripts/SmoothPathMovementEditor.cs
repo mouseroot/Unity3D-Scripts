@@ -1,11 +1,13 @@
-﻿using UnityEditor;
+using UnityEditor;
 using UnityEngine;
 
 [CanEditMultipleObjects]
+
 [CustomEditor(typeof(SmoothPathMovement))]
 public class SmoothPathMovementEditor : Editor {
 
     private SmoothPathMovement sPathMovement;
+    private GUIStyle style;
 
     public override void OnInspectorGUI()
     {
@@ -13,12 +15,20 @@ public class SmoothPathMovementEditor : Editor {
         base.OnInspectorGUI();
     }
 
+
     public void OnSceneGUI()
     {
+        style = new GUIStyle();
+        Handles.BeginGUI();  
+ 
         foreach (SmoothPathNode node in sPathMovement.pathNodes)
         {
-            node.pathPosition = Handles.FreeMoveHandle(node.pathPosition, Quaternion.identity, 0.3f, Vector3.zero, Handles.DrawRectangle);
+            style.normal.textColor = node.textColor;
+            node.pathPosition = Handles.FreeMoveHandle(node.pathPosition, Quaternion.identity, 0.2f, Vector3.zero, Handles.RectangleCap);
+            Vector2 pos2D = HandleUtility.WorldToGUIPoint(node.pathPosition);  
+            Handles.Label(node.pathPosition, node.nodeName, style);
         }
+        Handles.EndGUI();        
     }
     Tool LastTool = Tool.None;
 

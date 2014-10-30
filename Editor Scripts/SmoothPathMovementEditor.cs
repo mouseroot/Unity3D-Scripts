@@ -19,14 +19,16 @@ public class SmoothPathMovementEditor : Editor {
     public void OnSceneGUI()
     {
         style = new GUIStyle();
-        Handles.BeginGUI();  
- 
-        foreach (SmoothPathNode node in sPathMovement.pathNodes)
+        Handles.BeginGUI();
+        if (sPathMovement.pathNodes.Length >= 1)
         {
-            style.normal.textColor = node.textColor;
-            node.pathPosition = Handles.FreeMoveHandle(node.pathPosition, Quaternion.identity, 0.2f, Vector3.zero, Handles.RectangleCap);
-            Vector2 pos2D = HandleUtility.WorldToGUIPoint(node.pathPosition);  
-            Handles.Label(node.pathPosition, node.nodeName, style);
+            foreach (SmoothPathNode node in sPathMovement.pathNodes)
+            {
+                style.normal.textColor = node.textColor;
+                node.pathPosition = Handles.FreeMoveHandle(node.pathPosition, Quaternion.identity, 0.2f, Vector3.zero, Handles.RectangleCap);
+                Vector2 pos2D = HandleUtility.WorldToGUIPoint(node.pathPosition);
+                Handles.Label(node.pathPosition, node.nodeName, style);
+            }
         }
         Handles.EndGUI();        
     }

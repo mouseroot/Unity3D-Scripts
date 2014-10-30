@@ -48,4 +48,7 @@ DualStickController
 	
 TriggerAreaLookAtTag
 	- Will track(rotate, lookat) object with tag when the object enters the trigger area and stop when object leaves (think, tower defense)
+	
+DestroyOffscreen
+	- Will destroy the gameobject when its no longer visible to the renderer
 

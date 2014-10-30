@@ -42,4 +42,10 @@ GameManager/GameManagerEditor
 
 CheckpointManager/CheckpointManagerEditor/CheckpointScript
 	- Script that manages all gameObjects that have the CheckpointScript, which tracks if the attached collider has been triggered
+	
+DualStickController
+	- Dual Stick (4 direction move/attack) controller that will make sprite face in whatever direction you are attacking
+	
+TriggerAreaLookAtTag
+	- Will track(rotate, lookat) object with tag when the object enters the trigger area and stop when object leaves (think, tower defense)
 

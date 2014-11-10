@@ -1,5 +1,5 @@
-Cursor2D 
-	- Script that manages the visibility of the mouse cursor aswell as the image that that is used as the cursor
+Script|Description
+Cursor2D|Script that manages the visibility of the mouse cursor aswell as the image that that is used as the cursor
 
 Draggable 
 	- Script that allows any object to be dragged, also allows locking the X,Y axis

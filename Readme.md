@@ -1,5 +1,5 @@
 Script|Description
-------|-----------
+----|-----------
 Cursor2D|Script that manages the visibility of the mouse cursor aswell as the image that that is used as the cursor
 Draggable|Script that allows any object to be dragged, also allows locking the X,Y axis
 GotoLevel|loads the specified level by clicking the mouse or hitting the return key

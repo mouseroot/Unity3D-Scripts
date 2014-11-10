@@ -17,7 +17,7 @@ InstantPathMovement|script that animates an object by settings its position to a
 SmoothPathMovement|script that animates an object by transitioning from a set of positions smoothly (lerp,slerp,MoveTowards)
 MoveToPoint|EaseIn/Out or instant movement that animates to a set position
 GameManager/GameManagerEditor|Manages invisible but important background systems like score,health,inventory and anything else
-CheckpointManager/CheckpointManagerEditor/CheckpointScript|Script that manages all gameObjects that have the CheckpointScript, which tracks if the attached collider has been triggered
+CheckpointManager/CheckpointScript|Script that manages all gameObjects that have the CheckpointScript, which tracks if the attached collider has been triggered
 DualStickController|Dual Stick (4 direction move/attack) controller that will make sprite face in whatever direction you are attacking
 TriggerAreaLookAtTag|Will track(rotate, lookat) object with tag when the object enters the trigger area and stop when object leaves (think, tower defense)
 DestroyOffscreen|Will destroy the gameobject when its no longer visible to the renderer
